@@ -24,7 +24,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <img
-              style={{ width: "10%", display: "block", margin: 'auto' }}
+              style={{
+                maxWidth: "135px",
+                height: "auto",
+                display: "block",
+                margin: "auto",
+              }}
               src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
               alt=""
             />
