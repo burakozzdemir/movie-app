@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import CardWithImage from "../components/CardWithImage";
 import {
   Container,
@@ -16,11 +16,18 @@ import logo from "../assets/images/logo.png";
 const HomePage: React.FC = () => {
   const [searchValue, setSearchValue] = useState("");
   const { movies, fetchMore, hasMore, loading } = useFetchMovies(searchValue);
+  const [firstLoading, setFirstLoading] = useState(true);
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value);
   };
 
+  useEffect(() => {
+    if(loading === true){
+      setFirstLoading(false);
+    }
+  }, [loading])
+  
   const renderMovies = () => {
     return (
       <>
@@ -38,7 +45,7 @@ const HomePage: React.FC = () => {
               />
             </Grid>
           ))
-        ) : (
+        ) : ( firstLoading ? <></> :
           <>
             <img
               style={{
@@ -50,7 +57,7 @@ const HomePage: React.FC = () => {
               src={logo}
               alt="logo"
             />
-            <h1
+            <h2
               style={{
                 position: "absolute",
                 top: "40%",
@@ -58,7 +65,7 @@ const HomePage: React.FC = () => {
               }}
             >
               The Movie Not Found...
-            </h1>
+            </h2>
           </>
         )}
       </>

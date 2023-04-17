@@ -26,7 +26,7 @@
 - The search bar is limited to a minimum of 2 characters.
 - To prevent users from sending an API request with every keystroke, the debounce function from the lodash library has been used.
 - The project has been fully designed with a responsive layout.
-
+- It is stated which country the films belong to.For Example (TR,EN,ES,FR)
 
 ## App Flow
 
