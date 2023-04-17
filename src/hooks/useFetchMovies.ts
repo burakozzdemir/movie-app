@@ -45,7 +45,7 @@ const useFetchMovies = (searchValue: string) => {
       setMovies([]);
       setPage(1);
       fetchMovies(searchValue, 1);
-    }, 200);
+    }, 1000);
 
     if (searchValue.length === 0 || searchValue.length >= 2) {
       debouncedSearch(searchValue);
