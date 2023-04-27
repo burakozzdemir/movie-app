@@ -54,7 +54,7 @@ const CardWithImage: React.FC<CardWithImageProps> = ({
       : "https://via.placeholder.com/220x330.png?text=No+Image";
 
   return (
-    <Card sx={{ maxWidth: imageWidth, margin: "16px auto", height: "592px" }}>
+    <Card sx={{ maxWidth: imageWidth, margin: "16px auto", height: "604px" }}>
       <Tooltip title={title}>
         <div>
           <CardHeader
@@ -70,9 +70,11 @@ const CardWithImage: React.FC<CardWithImageProps> = ({
               noWrap: true,
               variant: "subtitle2",
               marginLeft: 14,
+              color: 'primary'
+
             }}
             sx={{
-              height: "60px",
+              height: "70px",
               paddingBottom: 1,
               paddingTop: 1,
               overflowWrap: "break-word",
