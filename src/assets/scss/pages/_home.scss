@@ -1,0 +1,19 @@
+.title {
+    position: relative;
+    text-align: center;
+  
+  & > img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15rem auto;
+    transform: scale(0.75);
+  }
+  
+  & > h2 {
+    margin: 0;
+    font-family: sans-serif;
+    position: absolute;
+    top: 28%;
+  }
+}

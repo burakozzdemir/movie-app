@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import CardWithImage from "../components/CardWithImage";
 import {
   Container,
@@ -23,11 +23,11 @@ const HomePage: React.FC = () => {
   };
 
   useEffect(() => {
-    if(loading === true){
+    if (loading) {
       setFirstLoading(false);
     }
-  }, [loading])
-  
+  }, [loading]);
+
   const renderMovies = () => {
     return (
       <>
@@ -45,28 +45,13 @@ const HomePage: React.FC = () => {
               />
             </Grid>
           ))
-        ) : ( firstLoading ? <></> :
-          <>
-            <img
-              style={{
-                position: "absolute",
-                top: "50%",
-                width: "115px",
-                height: "115px",
-              }}
-              src={logo}
-              alt="logo"
-            />
-            <h2
-              style={{
-                position: "absolute",
-                top: "40%",
-                fontFamily: "sans-serif",
-              }}
-            >
-              The Movie Not Found...
-            </h2>
-          </>
+        ) : firstLoading ? (
+          <></>
+        ) : (
+          <div className="title">
+            <img src={logo} alt="logo"/>
+            <h2>The Movie Not Found...</h2>
+          </div>
         )}
       </>
     );

@@ -87,7 +87,7 @@ const CardWithImage: React.FC<CardWithImageProps> = ({
         </div>
       </Tooltip>
       <Badge
-        badgeContent={badgeContent.toString().toUpperCase()}
+        badgeContent={badgeContent.toUpperCase()}
         color="error"
         overlap="circular"
         anchorOrigin={{ vertical: "top", horizontal: "right" }}
